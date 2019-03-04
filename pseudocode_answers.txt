@@ -1,0 +1,7 @@
+1. Why do programmers use pseudocode?
+
+   It helps programmers develop algoriths without using a particular language's syntax.
+
+2. If you run pseudocode on your computer what would happen?
+
+   Nothing - it is not a programming language.
