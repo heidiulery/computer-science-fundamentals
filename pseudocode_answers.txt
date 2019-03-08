@@ -5,3 +5,62 @@
 2. If you run pseudocode on your computer what would happen?
 
    Nothing - it is not a programming language.
+
+
+
+Write the following algorithms in pseudocode:
+
+1. Create a function that takes two numbers and prints out the greater number.
+
+INPUT first number
+INPUT second number
+IF first number is greater than second number 
+   PRINT first number
+ELSE
+   PRINT second number
+END IF
+
+
+2. Create a function that prints out the numbers from 1 to 100.
+
+INIT total is equal to 0
+WHILE total is less than 101
+   ADD 1 to total
+   PRINT total
+END WHILE
+
+
+3. Create a function that searches for a specific entry in a phonebook.
+
+INPUT name
+FOR every entry in phonebook compare the name input
+	IF the name is equal to a phonebook name
+		PRINT the phonebook number
+	ELSE
+		PRINT 'No match'
+	END IF
+END FOR
+
+4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
+var phonebook = [
+	{name: 'Elmer Fudd', number: 5551234567},
+	{name: 'Bugs Bunny', number: 5550987654},
+	{name: 'Yosemite Sam', number: 5557654321},
+	{name: 'Foghorn Leghorn', number: 5558765432},
+	{name: 'Sylvester Cat', number: 5556781234},
+];
+
+function findEntry (name) {
+	for(let i = 0; i < phonebook.length; i++) {
+  		if (name == phonebook[i].name) {
+    			return phonebook[i].number;
+    		}
+		else {
+			return 'No match'	
+		}
+	}
+}
+
+findEntry('Yosemite Sam');  // returns 5557654321
+findEntry('Tweety Bird');  // returns 'No match'
