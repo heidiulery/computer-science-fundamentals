@@ -36,9 +36,8 @@ INPUT name
 FOR every entry in phonebook compare the name input
 	IF the name is equal to a phonebook name
 		PRINT the phonebook number
-	ELSE
-		PRINT 'No match'
 	END IF
+		PRINT 'No match'
 END FOR
 
 4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
@@ -56,11 +55,9 @@ function findEntry (name) {
   		if (name == phonebook[i].name) {
     			return phonebook[i].number;
     		}
-		else {
-			return 'No match'	
 		}
-	}
-}
+	return 'No match';
+	} 
 
 findEntry('Yosemite Sam');  // returns 5557654321
 findEntry('Tweety Bird');  // returns 'No match'
