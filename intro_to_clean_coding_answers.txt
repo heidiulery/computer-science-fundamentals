@@ -67,7 +67,33 @@ Yes, it is very readable, has good naming convention, good indentation, and does
 
 	c. The following class is a code snippet that should support the transactions a customer can perform at an ATM.
 
-		
+		CLASS BankAccount
+			FUNCTION displayBalance
+				PRINT balance
+			END FUNCTION
+
+			FUNCTION deposit(amount)
+				SET balance to balance + amount
+			END FUNCTION
+
+			FUNCTION withdraw(amount)
+				IF balance > amount THEN
+					SET balance to balance - amount
+				END
+			END FUNCTION
+
+		CLASS Services
+			FUNCTION creditCardOffer
+				IF NOT (customer.hasCreditCard) THEN
+					CALL offerCredit Card
+				END
+			END FUNCTION
+
+			FUNCTION checkStatus
+				IF NOT (customer.hasCheckingAccount) THEN
+					CALL offerCheckingAccount
+				END
+			END FUNCTION		
 
 6. Square Given an array of integers, find out whether the sum of the integers is a perfect square. If it is a perfect square, return the square root, otherwise return the sum.
 
@@ -81,17 +107,25 @@ function square(numbersTotal) {
 	if (Math.sqrt(numbersTotal) % 1 === 0) {
 		return Math.sqrt(numbersTotal);
 	}
-	else {
-		return numbersTotal;
-	}
+	return numbersTotal;
 }
 
 square(numbersTotal);
 
 7. Duplicate Given an array of integers, find out whether the array contains any duplicate elements. The function should return true if any value appears at least twice in the array, and false if every element is distinct.
 
-var numbers = [12, 3 , 7, 24, 13, 12, 35, 4];
+var numbers = [12, 3 , 7, 24, 13, 12, 35, 4, 12];
+var sortedNumbers = numbers.slice().sort();
 
+function duplicates(array) {
+	for (var i = 0; i < sortedNumbers.length; i++) {
+		if (sortedNumbers[i + 1] == sortedNumbers[i]) {
+			return true;
+		}
+		return false;
+	}
+}
+duplicates(numbers);  // returns true
 
 
 
