@@ -17,17 +17,56 @@ I would use queue data structure for undo because you would start at the end of 
 
 function reverse(original) {
 	var stack = [];
-	original.splice('').forEach(letter => {
-		stack.push(letter);
-	})
+	for (let character of original) {
+		stack.push(character);
+	}
+	var reversed = '';
+	while (stack.length > 0) {
+		reversed += stack.pop();
+	}
+	return reversed;
 }
-
 reverse('Bloc!');
 
 2. Implement the pop method of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure. Since the internal list is not the same as defined in the checkpoint, it may help to rewrite the pseudocode first.
 
+function lifo(stack) {
+	var queue = [];
+	queue = stack.slice(-1).pop();
+
+	return queue;
+}
+lifo(['B', 'l', 'o', 'c', '!']);
 
 
 
 
 1. Implement the enqueue and dequeue methods defined in the checkpoint inside your own Queue class.
+
+var Queue = function() {
+	this.customer = [];
+
+	this.isEmpty = function() {
+		return this.customer.length === 0;
+	}	
+
+	this.enqueue = function(person) {
+		return this.customer.push(person);
+	}
+
+	this.dequeue = function() {
+		return this.customer.shift();
+	}
+}
+
+var coffeeLine = new Queue();
+
+console.log(coffeeLine.isEmpty());  // returns true
+coffeeLine.enqueue('Heidi');
+coffeeLine.enqueue('Jose'); 
+coffeeLine.dequeue();
+coffeeLine.enqueue('Gretchen');
+coffeeLine.dequeue();
+coffeeLine.enqueue('Jason');
+coffeeLine.enqueue('Victor');
+console.log(coffeeLine);  // returns ['Gretchen', 'Jason', 'Victor']
