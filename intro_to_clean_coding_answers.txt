@@ -1,0 +1,118 @@
+1. In your own words, explain what clean code is and why it is important.
+
+Clean code is code that is simple, readable, and maintainable.  Things to consider when writing code include:
+	* Naming - following standard naming conventions 
+	* DRY - Don't Repeat Yourself
+	* Self-documenting Code - readable code that does not require comments to understand
+	* Single Responsibility Principle - every function and class should have only one responsibility
+	* Squint Test - Squint your eyes to see if a color pattern is developing in code
+	* Nest Appropriately - Increases readability and should not be more than 2 levels deep
+	* Extract Methods - Extracting methods can reduce levels of nesting and improve readability
+	* Don't Over-Engineer - Limit unnecessary logic and features in code
+Clean code is important because when developers follow these guidelines they produce better code.  Code that is readable can be understood by every member on a team.  Code that is clean has fewer bugs and is easier to troublshoot. 
+
+2. Read this article about Toyota and their use of bad code. Although you may not yet understand all of the topics discussed, think about another commonly used object that relies on computers and explain what would happen if the code was not created to an acceptable standard.
+
+Many appliances, such as washers and dryers, have microprocessor units in them.  These control the many sensors that allow the washer and dryer to perform their job correctly, like water level, agitation, spinning, and draining.  If the code was not created to an acceptable standard, the sensors could fail during any of these functions. 
+
+3. Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
+
+No, it has poor naming convention, bad indentation, and too many comments.
+
+FUNCTION convert(temp, scale)
+	IF scale = 'F' THEN 
+		PRINT (temp - 32) * (5/9) + 'C'
+	ELSE IF scale = 'C' THEN
+		PRINT temp * 1.8000 + 32.00 + 'F'
+	END IF
+END FUNCTION
+
+4. Would you consider the following to be clean code? Explain why or why not. If not, refactor the code.
+
+Yes, it is very readable, has good naming convention, good indentation, and does not require comments to understand actions.
+
+5. Using pseudocode, refactor the code for the following examples using the principles you have learned in this checkpoint.
+
+	a. The following function prints the subtotal of a customer's transaction and receives payment accordingly.
+
+		FUNCTION checkOutCustomer(subTotal, discountRate, paymentType)
+			VARIABLE total = subTotal * discountRate + (subTotal * tax);
+			IF paymentType = 'CASH' THEN
+				CALL getPayment() RETURNING amount
+				PRINT 'Change due: ' + amount - total
+			ELSE IF paymentType = 'CREDIT CARD' THEN
+				PRINT 'Your credit card has been charged: ' + total
+			END IF
+		END FUNCTION
+				
+		FUNCTION getPayment(amount)
+			RETURN amount
+		END FUNCTION
+
+	b. The following function checks out a book if there are no issues with the guest's account.
+
+		FUNCTION permission(guest) 
+			IF guest.accountActive AND guest.outstandingFees = 0 THEN
+				CALL checkoutBook()
+			ELSE
+				PRINT 'Unable to check out book.'
+			END IF
+		END FUNCTION			
+		
+		FUNCTION checkoutBook(book, guest) 
+			APPEND book to guest.books
+			SET book.status to 'Checked Out'
+			PRINT 'Your books have been issued.'
+		END FUNCTION
+
+	c. The following class is a code snippet that should support the transactions a customer can perform at an ATM.
+
+		
+
+6. Square Given an array of integers, find out whether the sum of the integers is a perfect square. If it is a perfect square, return the square root, otherwise return the sum.
+
+var numbers = [13, 7, 9, 45, 16, 2, 4];
+
+var numbersTotal = numbers.reduce((number, total) => {
+	return total + number;
+});
+
+function square(numbersTotal) {
+	if (Math.sqrt(numbersTotal) % 1 === 0) {
+		return Math.sqrt(numbersTotal);
+	}
+	else {
+		return numbersTotal;
+	}
+}
+
+square(numbersTotal);
+
+7. Duplicate Given an array of integers, find out whether the array contains any duplicate elements. The function should return true if any value appears at least twice in the array, and false if every element is distinct.
+
+var numbers = [12, 3 , 7, 24, 13, 12, 35, 4];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
