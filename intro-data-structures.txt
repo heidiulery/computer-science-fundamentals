@@ -40,6 +40,8 @@ console.log(line);
 
 2. Provide another real-world example that you can model using a data structure.
 
-
+A library
 
 3. How would your data structure allow developers to access and manipulate the data?
+
+Developers could manipulate the data in many ways, such as: check a book out, return a book, order another copy, arrange by genre, or arrange by author.
